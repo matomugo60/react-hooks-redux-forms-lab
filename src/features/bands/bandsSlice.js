@@ -1,15 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit'
 
 const bandsSlice = createSlice({
-  name: "bands",
+  name: 'bands',
   initialState: {
     entities: [],
   },
   reducers: {
-    // create reducer methods
+    // create reducer method
+    bandAdded(state, action) {
+      state.entities.push(action.payload)
+    },
   },
-});
+})
 
 // export the action creators
 
-export default bandsSlice.reducer;
+export const { bandAdded } = bandsSlice.actions
+
+export default bandsSlice.reducer
